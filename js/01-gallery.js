@@ -5,6 +5,8 @@ const gallery = document.querySelector(".gallery");
 const imageMarkup = makeGalleryItemsMarkup(galleryItems);
 gallery.insertAdjacentHTML("beforeend", imageMarkup);
 
+gallery.addEventListener("click", onGalleryClick);
+
 function makeGalleryItemsMarkup(items) {
   return items
     .map(({ preview, original, description }) => {
@@ -20,4 +22,17 @@ function makeGalleryItemsMarkup(items) {
   </li>`;
     })
     .join("");
-};
+}
+
+function onGalleryClick(evt) {
+  evt.preventDefault();
+
+  const isGalleryImageEl = evt.target.classList.contains("gallery__image");
+
+  if (!isGalleryImageEl) {
+    return;
+  }
+
+  const imgSelected = evt.target.getAttribute("data-source");
+ 
+}
