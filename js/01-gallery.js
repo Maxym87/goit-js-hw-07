@@ -35,9 +35,7 @@ function onGalleryClick(evt) {
 
   const imgSelected = evt.target.getAttribute("data-source");
 
-  const instance = basicLightbox.create(`
-    <img src="${imgSelected}" width="800" height="600">
-`);
+  const instance = basicLightbox.create(`<img src="${imgSelected}" width="800" height="600">`);
 
   instance.show();
 }
